@@ -1,0 +1,335 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marriage Biodata</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .biodata-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            overflow: hidden;
+            max-width: 800px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            margin: -75px auto 20px;
+            display: block;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            color: #ff6b6b;
+            border-bottom: 2px solid #ff6b6b;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .personal-info, .family-info, .education-career, .partner-pref {
+            padding: 20px;
+        }
+
+        .info-item {
+            margin-bottom: 10px;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #555;
+        }
+
+        .download-btn {
+            background-color: #ff6b6b;
+            border: none;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 200px;
+            margin: 20px auto;
+            display: block;
+        }
+
+            .download-btn:hover {
+                background-color: #e05555;
+            }
+
+        @media print {
+            .download-btn {
+                display: none;
+            }
+
+            body {
+                background-color: white;
+            }
+
+            .biodata-card {
+                box-shadow: none;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container my-5" id="contentToPrint">
+        <div class="biodata-card">
+            <div class="header">
+                <h1>MARRIAGE BIODATA</h1>
+            </div>
+            <img src="Image/Krishna.png" alt="Professional portrait of applicant in formal attire" class="profile-img">
+
+            <div class="personal-info">
+                <h3 class="section-title">Personal Information</h3>
+
+                <div class="row">
+                    <div class="col-md-6 info-item">
+                        <span class="info-label">Full Name:</span> Krishnanand Jha
+                    </div>
+                    <div class="col-md-6 info-item">
+                        <span class="info-label">Date of Birth:</span> 11 June 1999
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 info-item">
+                        <span class="info-label">Height:</span> 5'8"
+                    </div>
+                    <div class="col-md-6 info-item">
+                        <span class="info-label">Religion:</span> Hindu
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 info-item">
+                        <span class="info-label">Marital Status:</span> Never Married
+                    </div>
+                    <div class="col-md-6 info-item">
+                        <span class="info-label">Mother Tongue:</span> Hindi
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 info-item">
+                        <span class="info-label">Caste:</span> Brahmin
+                    </div>
+                    <div class="col-md-6 info-item">
+                        <span class="info-label">Gotra:</span> Kashyap
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 info-item">
+                        <span class="info-label">Manglik:</span> No
+                    </div>
+                    <div class="col-md-6 info-item">
+                        <span class="info-label">Place of Birth:</span> Bihar, Madhubani
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 info-item">
+                        <span class="info-label">Residence:</span> Sector - 49, NOIDA, Uttar Pradesh
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 info-item">
+                        <span class="info-label">Contact No:</span> +91 9910714414
+                    </div>
+                    <div class="col-md-6 info-item">
+                        <span class="info-label">Email:</span> krishnanandjha1999@gmail.com
+                    </div>
+                </div>
+            </div>
+
+            <div class="partner-pref">
+                <h3 class="section-title">Family Information</h3>
+
+                <div class="row">
+                    <div class="col-md-6 info-item">
+                        <span class="info-label">Father's Name:</span> MR. Radha Nanad Jha
+                    </div>
+                    <div class="col-md-6 info-item">
+                        <span class="info-label">Occupation:</span> Working with Shipping line sea export as a Sr. Sale's Manager
+                    </div>
+
+                </div>
+                
+
+                <div class="row">
+                    <div class="col-md-6 info-item">
+                        <span class="info-label">Mother's Name:</span> Baby Jha
+                    </div>
+                    <div class="col-md-6 info-item">
+                        <span class="info-label">Occupation:</span> Housewife
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 info-item">
+                        <span class="info-label">No. of Brothers:</span> 1
+                    </div>
+                    <div class="col-md-6 info-item">
+                        <span class="info-label">Occupation:</span> Animation Development (Freelancer)
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="education-career">
+                    <h3 class="section-title">Education & Career</h3>
+
+                    <div class="row">
+                        <div class="col-md-6 info-item">
+                            <span class="info-label">Education:</span> MCA (Computer Application)
+                        </div>
+                        <div class="col-md-6 info-item">
+                            <span class="info-label">University:</span> LNCT , Bhopal
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 info-item">
+                            <span class="info-label">Occupation:</span> .Net FullStack Developer
+                        </div>
+                        <div class="col-md-6 info-item">
+                            <span class="info-label">Organization:</span> MPOnline Ltd. (Joint Venture between TCS and MP Govt.)
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="partner-pref">
+                    <h3 class="section-title">Partner Preference</h3>
+
+
+                    <div class="row">
+                        <div class="col-md-6 info-item">
+                            <span class="info-label">Religion:</span> Hindu
+                        </div>
+                        <div class="col-md-6 info-item">
+                            <span class="info-label">Caste:</span> Brahmin
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 info-item">
+                            <span class="info-label">Marital Status:</span> Never Married
+                        </div>
+                        <div class="col-md-6 info-item">
+                            <span class="info-label">Education:</span> Professional Degree
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 info-item">
+                            <span class="info-label">Occupation:</span> Professional/ Business
+                        </div>
+                        <div class="col-md-6 info-item">
+                            <span class="info-label">Family Values:</span> Traditional & Modern
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="info-label">Other Preferences:</span>
+                        Non-smoker, Non-alcoholic, Preferably working in same city or nearby
+                    </div>
+                </div>
+
+                <div class="hobbies">
+                    <h3 class="section-title">Hobbies & Interests</h3>
+                    <div class="info-item">
+                        Traveling, Reading, Cooking, Gym
+                    </div>
+                </div>
+
+                <button class="btn download-btn" id="downloadPDF">
+                    <i class="fas fa-download me-2"></i> Download as PDF
+                </button>
+            </div>
+        </div>
+
+        <!-- Bootstrap JS Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script>
+            const { jsPDF } = window.jspdf;
+
+            document.getElementById('downloadPDF').addEventListener('click', function () {
+                const element = document.getElementById('contentToPrint');
+                const downloadBtn = document.getElementById('downloadPDF');
+
+                // 👇 Temporarily hide the button
+                downloadBtn.style.display = 'none';
+
+                // 👇 Temporarily set background to white
+                const originalBg = element.style.backgroundColor;
+                element.style.backgroundColor = 'white';
+
+                html2canvas(element, {
+                    scale: 2,
+                    useCORS: true,
+                    backgroundColor: '#ffffff'
+                }).then(canvas => {
+                    const imgData = canvas.toDataURL('image/png');
+                const pdf = new jsPDF('p', 'mm', 'a4');
+                const imgWidth = 210;
+                const pageHeight = 297;
+                const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+                let heightLeft = imgHeight;
+                let position = 0;
+
+                pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                heightLeft -= pageHeight;
+
+                while (heightLeft > 0) {
+                    position = heightLeft - imgHeight;
+                    pdf.addPage();
+                    pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                    heightLeft -= pageHeight;
+                }
+
+                pdf.save('marriage-biodata.pdf');
+
+                // 👇 Revert background & show button again
+                element.style.backgroundColor = originalBg;
+                downloadBtn.style.display = 'block';
+            });
+            });
+        </script>
+
+
+
+
+</body>
+</html>
